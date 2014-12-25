@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 class TransactionAdmin(admin.ModelAdmin):
     list_display = ['agent_from', 'agent_to', 'amount', 'batch_id', 'transaction_type', 'reason', 'from_deposit',
                     'date_created']
+    search_fields = ['agent_from', 'agent_to']
 
     def agent_from(self, instance):
         return instance.agent_from
